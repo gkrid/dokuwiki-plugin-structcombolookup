@@ -3,7 +3,7 @@
  * DokuWiki Plugin structcombolookup (Action Component)
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
- * @author  Szymon Olewniczak <it@gmail.com>
+ * @author  Szymon Olewniczak <it@rid.pl>
  */
 
 // must be run within Dokuwiki
@@ -23,7 +23,7 @@ class action_plugin_structcombolookup extends DokuWiki_Action_Plugin
      */
     public function register(Doku_Event_Handler $controller)
     {
-        $controller->register_hook('PLUGIN_STRUCT_TYPECLASS_INIT', 'FIXME', $this, 'handle_plugin_struct_typeclass_init');
+        $controller->register_hook('PLUGIN_STRUCT_TYPECLASS_INIT', 'BEFORE', $this, 'handle_plugin_struct_typeclass_init');
    
     }
 
@@ -40,6 +40,7 @@ class action_plugin_structcombolookup extends DokuWiki_Action_Plugin
      */
     public function handle_plugin_struct_typeclass_init(Doku_Event $event, $param)
     {
+        $event->data['ComboLookup'] = 'dokuwiki\\plugin\\structcombolookup\\types\\ComboLookup';
     }
 
 }

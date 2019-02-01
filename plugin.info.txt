@@ -1,6 +1,6 @@
 base   structcombolookup
 author Szymon Olewniczak
-email  it@gmail.com
+email  it@rid.pl
 date   2019-02-01
 name   structcombolookup plugin
 desc   New struct type ComboLookup
