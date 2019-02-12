@@ -1,9 +1,9 @@
 jQuery(function($) {
     return function () {
-        $.widget( "custom.combobox", {
+        $.widget( "custom.structcombolookup", {
             _create: function() {
                 this.wrapper = $( "<span>" )
-                    .addClass( "custom-combobox" )
+                    .addClass( "custom-structcombolookup" )
                     .insertAfter( this.element );
 
                 this.element.hide();
@@ -19,7 +19,7 @@ jQuery(function($) {
                     .appendTo( this.wrapper )
                     .val( value )
                     .attr( "title", "" )
-                    .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+                    .addClass( "custom-structcombolookup-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
                     .autocomplete({
                         delay: 0,
                         minLength: 0,
@@ -59,7 +59,7 @@ jQuery(function($) {
                         text: false
                     })
                     .removeClass( "ui-corner-all" )
-                    .addClass( "custom-combobox-toggle ui-corner-right" )
+                    .addClass( "custom-structcombolookup-toggle ui-corner-right" )
                     .on( "mousedown", function() {
                         wasOpen = input.autocomplete( "widget" ).is( ":visible" );
                     })
@@ -130,6 +130,6 @@ jQuery(function($) {
             }
         });
 
-        $( ".struct_combolookup" ).combobox();
+        $( ".struct_combolookup" ).structcombolookup();
     };
 }(jQuery));
