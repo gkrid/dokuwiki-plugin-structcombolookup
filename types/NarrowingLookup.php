@@ -12,7 +12,7 @@ class NarrowingLookup extends Lookup
         'schema' => '',
         'field' => '',
         'narrow by' => '',
-        'disable child' => false
+        'disable child' => true
     );
 
     /** @var  Column caches the referenced column */
