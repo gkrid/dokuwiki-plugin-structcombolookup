@@ -1,3 +1,22 @@
+function structcombolookup_change_narrowby(select, disableChild) {
+    var $narowingSelect = jQuery(select),
+        name = $narowingSelect.data('childName'),
+        option = $narowingSelect.children("option:selected").val();
+    $form = $narowingSelect.parents("form"),
+        $targetSelect = $form.find("[name='" + name + "']");
+
+    //show all
+    $targetSelect.find("option").show();
+    if (option === '') {
+        $targetSelect.find("option").removeAttr("selected");
+        $targetSelect.find("option").first().attr("selected", "selected");
+        if (disableChild) $targetSelect.attr('disabled', 'disabled');
+    } else {
+        if (disableChild) $targetSelect.removeAttr('disabled');
+        $targetSelect.find("option[data-parent!='"+option+"']").hide();
+    }
+}
+
 jQuery(function($) {
     return function () {
         $.widget( "custom.structcombolookup", {

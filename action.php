@@ -41,6 +41,8 @@ class action_plugin_structcombolookup extends DokuWiki_Action_Plugin
     public function handle_plugin_struct_typeclass_init(Doku_Event $event, $param)
     {
         $event->data['ComboLookup'] = 'dokuwiki\\plugin\\structcombolookup\\types\\ComboLookup';
+        $event->data['NarrowingLookup'] = 'dokuwiki\\plugin\\structcombolookup\\types\\NarrowingLookup';
+
     }
 
 }

@@ -1,7 +1,7 @@
 base   structcombolookup
 author Szymon Olewniczak
 email  it@rid.pl
-date   2019-02-12
+date   2019-04-29
 name   structcombolookup plugin
-desc   New struct type ComboLookup
+desc   New struct types: ComboLookup, NarrowingLookup
 url    https://dokuwiki.org/plugin:structcombolookup
