@@ -105,9 +105,9 @@ class NarrowingLookup extends Lookup
     }
 
 
-    protected function parentValueEditor($name, $rawvalue) {
+    protected function parentValueEditor($name, $rawvalue, $htmlID) {
         $params = array(
-            'data-child-name' => $name,
+            'data-child-id' => $htmlID,
             'class' => 'struct_'.strtolower($this->getClass()). '_parent',
             'onchange' => 'structcombolookup_change_narrowby(this, '.(int)$this->config['disable child'].')'
         );
@@ -135,7 +135,7 @@ class NarrowingLookup extends Lookup
      * @return string
      */
     public function valueEditor($name, $rawvalue, $htmlID) {
-        $html = $this->parentValueEditor($name, $rawvalue);
+        $html = $this->parentValueEditor($name, $rawvalue, $htmlID);
 
         $params = array(
             'name' => $name,
