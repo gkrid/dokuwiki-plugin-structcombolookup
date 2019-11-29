@@ -1,9 +1,8 @@
 function structcombolookup_change_narrowby(select, disableChild) {
     var $narowingSelect = jQuery(select),
         id = $narowingSelect.data('childId'),
-        option = $narowingSelect.children("option:selected").val();
-    $form = $narowingSelect.parents("form"),
-        $targetSelect = $form.find("#" + id);
+        option = $narowingSelect.children("option:selected").val(),
+        $targetSelect = jQuery(document.getElementById(id)); // id may contain special chars
 
     //show all
     $targetSelect.find("option").show();
